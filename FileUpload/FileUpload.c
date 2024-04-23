@@ -396,20 +396,20 @@ bool CalcCheckSum(_FILE_UPLOAD *sUploadFile)
 	if(NULL != sUploadFile)
 	{
 		ulUploadSize += sizeof(sUploadFile->ucUploadId);
-		ulUploadSize += sizeof(sUploadFile->ulPayLoadSize);
-		ulUploadSize += sUploadFile->ulPayLoadSize;
 
 		do
 		{
-			if(false == allocMemory(&pucPayload, ulUploadSize))
+			if(false == allocMemory(&pucPayload, sizeof(sUploadFile->ucUploadId) + 
+						sizeof(sUploadFile->ulPayLoadSize) + sUploadFile->ulPayLoadSize))
 			{
 				break;
 			}
 
-			memcpy(pucPayload, sUploadFile, sizeof(sUploadFile->ucUploadId) + 
-				sizeof(sUploadFile->ulPayLoadSize));
-			
-			memcpy(pucPayload, sUploadFile->pucPayLoad, sUploadFile->ulPayLoadSize);
+			memcpy(pucPayload, sUploadFile->ucUploadId, sizeof(sUploadFile->ucUploadId));
+			memcpy((pucPayload + ulUploadSize), sUploadFile->pucPayLoad, sUploadFile->ulPayLoadSize);
+			ulUploadSize += sizeof(sUploadFile->ulPayLoadSize);
+			memcpy((pucPayload + ulUploadSize), sUploadFile->pucPayLoad, sUploadFile->ulPayLoadSize);
+			ulUploadSize += sUploadFile->ulPayLoadSize;
 
 			if(false == findCheckSum(pucPayload, ulUploadSize, &sUploadFile->ucCheckSum))
 			{
@@ -438,20 +438,19 @@ bool findCheckSum(uint8* pucBuffer, uint32 ulSize, uint8* ucCheckSum)
 	uint16 unCheckSum = 0;
 	uint8* pucData = (uint8*)&unCheckSum;
 	uint32 ulIndex = 0;
-	int data = 0;
 
 	if((NULL != pucBuffer) && (NULL != ucCheckSum))
 	{
 		for(ulIndex = 0; ulIndex < ulSize; ulIndex++)
 		{
 			unCheckSum += pucBuffer[ulIndex];
-			data += pucBuffer[ulIndex];
 
 			while(unCheckSum > FILE_UPLOAD_ONE_BYTE_MAX_VALUE)
 			{
 				unCheckSum = (*pucData) + *(pucData + FILE_UPLOAD_ONE);
 			}
 		}
+
 		*ucCheckSum = (uint8) unCheckSum;
 		*ucCheckSum = ~(*ucCheckSum);
 		blReturn = true;
