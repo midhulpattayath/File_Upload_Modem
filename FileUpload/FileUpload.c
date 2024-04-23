@@ -102,7 +102,7 @@ bool uploadModem(_FILE_UPLOAD psUploadData)
 	
 	if(psUploadData.ucUploadId != eUploadInitId)
 	{
-		printf("\n Upload payload Size %lx", psUploadData.ulPayLoadSize);
+		printf("\n Upload payload Size %ld", psUploadData.ulPayLoadSize);
 		printf("\n Payload data : ");
 
 		for(unIndex = 0; unIndex < psUploadData.ulPayLoadSize; unIndex++)
@@ -309,11 +309,11 @@ bool processFileBuffer(FILE *psFile, uint32* pulFileSize)
 				break;
 			}
 
-			// if(false == uploadModem(sUploadFile))
-			// {
-			// 	printf("\n Upload modem failed");
-			// 	break;
-			// }
+			if(false == uploadModem(sUploadFile))
+			{
+				printf("\n Upload modem failed");
+				break;
+			}
 
 			if(false == modemResponse(&sModemResponse, sUploadFile.ucUploadId))
 			{
@@ -405,8 +405,8 @@ bool CalcCheckSum(_FILE_UPLOAD *sUploadFile)
 				break;
 			}
 
-			memcpy(pucPayload, sUploadFile->ucUploadId, sizeof(sUploadFile->ucUploadId));
-			memcpy((pucPayload + ulUploadSize), sUploadFile->pucPayLoad, sUploadFile->ulPayLoadSize);
+			memcpy(pucPayload, &sUploadFile->ucUploadId, sizeof(sUploadFile->ucUploadId));
+			memcpy((pucPayload + ulUploadSize), &(sUploadFile->ulPayLoadSize), sUploadFile->ulPayLoadSize);
 			ulUploadSize += sizeof(sUploadFile->ulPayLoadSize);
 			memcpy((pucPayload + ulUploadSize), sUploadFile->pucPayLoad, sUploadFile->ulPayLoadSize);
 			ulUploadSize += sUploadFile->ulPayLoadSize;
