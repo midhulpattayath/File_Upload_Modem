@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+project(hello VERSION 1.0)
+
+file(GLOB_RECURSE buildmsginc ./BuildMessage/*.c)
+file(GLOB_RECURSE checkSumInc ./CheckSum/*.c)
+file(GLOB_RECURSE fileInc ./FileOperation/*.c)
+file(GLOB_RECURSE fileuploadInc ./FileUpload/*.c)
+file(GLOB_RECURSE memoryInc ./MemoryMng/*.c)
+file(GLOB_RECURSE modemInc ./ModemResponse/*.c)
+
+add_executable(FileUploadTask ./main.c ${fileuploadInc} ${buildmsginc} ${checkSumInc} ${fileInc} ${memoryInc} ${modemInc})
+
+target_include_directories(FileUploadTask PUBLIC ./FileUpload)
+target_include_directories(FileUploadTask PUBLIC ./BuildMessage)
+target_include_directories(FileUploadTask PUBLIC ./CheckSum)
+target_include_directories(FileUploadTask PUBLIC ./Common)
+target_include_directories(FileUploadTask PUBLIC ./FileOperation)
+target_include_directories(FileUploadTask PUBLIC ./MemoryMng)
+target_include_directories(FileUploadTask PUBLIC ./ModemResponse)
