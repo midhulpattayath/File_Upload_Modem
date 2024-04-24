@@ -13,6 +13,7 @@
 
 //******************************* Include Files *******************************
 #include "common.h"
+#include "fileUpload.h"
 #include "calcCheckSum.h"
 
 //******************************* Local Types *********************************

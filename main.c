@@ -13,12 +13,7 @@
 
 //******************************* Include Files *******************************
 #include "common.h"
-// #include "fileOperation.h"
-#include "Fileupload.h"
-// #include "memoryManagement.h"
-// #include "modem.h"
-// #include "calcCheckSum.h"
-// #include "buildMsgQueue.h"
+#include "fileUpload.h"
 
 //******************************* Local Types *********************************
 

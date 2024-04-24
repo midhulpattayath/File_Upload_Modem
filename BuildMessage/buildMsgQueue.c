@@ -14,7 +14,7 @@
 //******************************* Include Files *******************************
 #include "common.h"
 #include "memoryManagement.h"
-#include "Fileupload.h"
+#include "fileUpload.h"
 #include "modem.h"
 #include "buildMsgQueue.h"
 

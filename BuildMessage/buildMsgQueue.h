@@ -10,8 +10,8 @@
 // Date		: 22-04-24
 //
 //*****************************************************************************
-#ifndef _BUILD_MSG_QUEUE_
-#define _BUILD_MSG_QUEUE_
+#ifndef _BUILD_MSG_QUEUE_H_
+#define _BUILD_MSG_QUEUE_H_
 
 //******************************** Marcos *************************************
 
@@ -19,7 +19,7 @@
 #include "common.h"
 #include "msgQueue.h"
 #include <stdio.h>
-#include "Fileupload.h"
+#include "fileUpload.h"
 #include "modem.h"
 #include "modemResponse.h"
 
@@ -39,5 +39,5 @@
 bool buildUploadMsgQ(_FILE_UPLOAD sUploadFile, _MESSAGE_Q* psMsgQ);
 bool buildResponseMsgQ(_MODEM_RESPONSE sModemResponse, _MESSAGE_Q* psMsgQ);
 
-#endif // _BUILD_MSG_QUEUE_
+#endif // _BUILD_MSG_QUEUE_H_
 // EOF

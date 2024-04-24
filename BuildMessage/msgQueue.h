@@ -10,8 +10,8 @@
 // Date		: 22-04-24
 //
 //*****************************************************************************
-#ifndef _MSG_QUEUE_
-#define _MSG_QUEUE_
+#ifndef _MSG_QUEUE_H_
+#define _MSG_QUEUE_H_
 
 //******************************** Marcos *************************************
 
@@ -38,5 +38,5 @@ typedef struct __MESSAGE_Q
 
 //**************************** Function Prototype *****************************
 
-#endif // _MSG_QUEUE_
+#endif // _MSG_QUEUE_H_
 // EOF

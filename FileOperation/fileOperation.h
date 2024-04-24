@@ -10,8 +10,8 @@
 // Date		: 23-04-24
 //
 //*****************************************************************************
-#ifndef _FILE_OPERATION_
-#define _FILE_OPERATION_
+#ifndef _FILE_OPERATION_H_
+#define _FILE_OPERATION_H_
 
 //******************************** Marcos *************************************
 
@@ -36,5 +36,5 @@ bool readLength(FILE *psFile, uint32* pulFileSize);
 bool openFile(FILE **psFile);
 void closeFile(FILE *psFile);
 
-#endif // _FILE_OPERATION_
+#endif // _FILE_OPERATION_H_
 // EOF

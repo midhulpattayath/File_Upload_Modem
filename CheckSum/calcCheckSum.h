@@ -10,14 +10,13 @@
 // Date		: 23-04-24
 //
 //*****************************************************************************
-#ifndef _CALCULATE_CHECK_SUM_
-#define _CALCULATE_CHECK_SUM_
+#ifndef _CALCULATE_CHECK_SUM_H_
+#define _CALCULATE_CHECK_SUM_H_
 
 //******************************** Marcos *************************************
 
 //******************************* Include Files *******************************
 #include "common.h"
-#include "FileUpload.h"
 
 //******************************* Global Types ********************************
 
@@ -34,5 +33,5 @@
 //**************************** Function Prototype *****************************
 bool CalcCheckSum(uint8* pucBuffer, uint32 ulSize, uint8* ucCheckSum);
 
-#endif // _CALCULATE_CHECK_SUM_
+#endif // _CALCULATE_CHECK_SUM_H_
 // EOF

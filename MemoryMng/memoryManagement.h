@@ -10,8 +10,8 @@
 // Date		: 23-04-24
 //
 //*****************************************************************************
-#ifndef _MEMORY_MANAGMENT_
-#define _MEMORY_MANAGMENT_
+#ifndef _MEMORY_MANAGMENT_H_
+#define _MEMORY_MANAGMENT_H_
 
 //******************************** Marcos *************************************
 
@@ -34,5 +34,5 @@
 bool allocMemory(uint8 **pucAllocBuffer, uint32 ulSize);
 void freeMemory(uint8 *pucMemoryAddress);
 
-#endif // _MEMORY_MANAGMENT_
+#endif // _MEMORY_MANAGMENT_H_
 // EOF

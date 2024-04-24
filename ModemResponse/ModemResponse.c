@@ -13,7 +13,7 @@
 
 //******************************* Include Files *******************************
 #include "common.h"
-#include "FileUpload.h"
+#include "fileUpload.h"
 #include "calcCheckSum.h"
 #include "buildMsgQueue.h"
 #include "modemResponse.h"

@@ -12,7 +12,7 @@
 //*****************************************************************************
 
 //******************************* Include Files *******************************
-#include "FileUpload.h"
+#include "fileUpload.h"
 #include "buildMsgQueue.h"
 #include "calcCheckSum.h"
 #include "fileOperation.h"

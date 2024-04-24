@@ -10,8 +10,8 @@
 // Date		: 22-04-24
 //
 //*****************************************************************************
-#ifndef _MODEM_RESPONSE_
-#define _MODEM_RESPONSE_
+#ifndef _MODEM_RESPONSE_H_
+#define _MODEM_RESPONSE_H_
 
 //******************************** Marcos *************************************
 
@@ -38,5 +38,5 @@ bool uploadModem(_MESSAGE_Q psUploadMsgQ, _MESSAGE_Q* psResPonseMsgQ);
 bool modemResponse(_MODEM_RESPONSE* psResponse, _MESSAGE_Q psResPonseMsgQ);
 bool modemSendInitMsg();
 
-#endif // _MODEM_RESPONSE_
+#endif // _MODEM_RESPONSE_H_
 // EOF
