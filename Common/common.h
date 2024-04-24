@@ -3,7 +3,7 @@
 // All Rights Reserved
 //*****************************************************************************
 //
-// File		: FileUpload.c
+// File		: common.h
 // Summary	: Common data types
 // Note		: None
 // Author	: Midhul
@@ -16,6 +16,10 @@
 //******************************* Include Files *******************************
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 //******************************* Global Types ********************************
 typedef unsigned char		uint8;
@@ -30,7 +34,7 @@ typedef unsigned long int	uint32;
 
 //**************************** Forward Declarations ***************************
 
-//***************************** Class Declaration *****************************
+//***************************** Structure Declaration *************************
 
 //*********************** Inline Method Implementations ***********************
 
